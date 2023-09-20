@@ -6,13 +6,8 @@
 #define VALID_SOURCE 1
 
 int main(void) {
-#if VALID_SOURCE
   const char *source = "# Simple program that exits with code 69.\n"
                        "69\n";
-#else
-  const char *source = "# Simple program that exits with code 69.\n"
-                       "exit(69);\n";
-#endif
 
   TokenList tokens = token_list_new();
   if (tokenize(source, &tokens) == 1) {
